@@ -8,3 +8,5 @@ WagePerHour=20
 FullDayHour=8
 DailyWage=$((WagePerHour*FullDayHour))
 
+#Part time hour
+PartDayHour=4
