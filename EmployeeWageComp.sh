@@ -17,9 +17,11 @@ function dailywagefind()
 case "$attendance" in
 	1)
 		DailyWage=$((WagePerHour*FullDayHour))
+		TotalHour=$((TotalHour+FullDayHour))
 		;;
 	2)
 		DailyWage=$((WagePerHour*PartDayHour))
+		TotalHour=$((TotalHour+PartDayHour))
 		;;
 	0)
 		DailyWage=0
@@ -30,12 +32,15 @@ esac
 DailyWage=0
 MonthlyWage=0
 numOfDays=20
+TotalHour=0
 
-#Running loop for A month
-for((i=0;i<numOfDays;i++))
+#Running loop for A month or 100hours
+for ((i=0;i<numOfDays;i++))
 do
-	attendance=$((RANDOM%3))
-	dailywagefind
-	MonthlyWage=$((DailyWage + MonthlyWage))
+	if [ $TotalHour -le 100 ]
+	then
+		attendance=$((RANDOM%3))
+		dailywagefind
+		MonthlyWage=$((DailyWage + MonthlyWage))
+	fi
 done
-
