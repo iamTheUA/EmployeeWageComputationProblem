@@ -3,6 +3,9 @@ echo "Welcome to Employee Wage Computation Program"
 #if attendance = 1 then It is Present and if =0 then It is Absent and =2 then it is part time
 attendance=$((RANDOM%3))
 
+#function to get Work hours
+function Work
+{
 #Calculating Daily Employee Wage
 WagePerHour=20
 FullDayHour=8
@@ -44,3 +47,5 @@ do
 		MonthlyWage=$((DailyWage + MonthlyWage))
 	fi
 done
+echo "Total Hours: "$TotalHour
+}
