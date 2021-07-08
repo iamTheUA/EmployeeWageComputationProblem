@@ -46,10 +46,17 @@ do
 		dailywagefind
 
 #array to store Daily Wage
-
 		Arr_Wage[$i]=$DailyWage
 		MonthlyWage=$((DailyWage + MonthlyWage))
 	fi
 done
 echo "Total Hours: "$TotalHour
+for((i=0;i<numOfDays;i++))
+do
+	echo "Day$((i+1)) Wage: " ${Arr_Wage[$i]}
+done
+echo "Total Wage: " $MonthlyWage
+
 }
+
+Work
