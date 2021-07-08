@@ -11,6 +11,9 @@ DailyWage=$((WagePerHour*FullDayHour))
 #Part time hour
 PartDayHour=4
 
+#Creating function for daily wage
+function dailywagefind()
+{
 case "$attendance" in
 	1)
 		DailyWage=$((WagePerHour*FullDayHour))
@@ -23,4 +26,16 @@ case "$attendance" in
 		;;
 	*)
 esac
+}
+DailyWage=0
+MonthlyWage=0
+numOfDays=20
+
+#Running loop for A month
+for((i=0;i<numOfDays;i++))
+do
+	attendance=$((RANDOM%3))
+	dailywagefind
+	MonthlyWage=$((DailyWage + MonthlyWage))
+done
 
