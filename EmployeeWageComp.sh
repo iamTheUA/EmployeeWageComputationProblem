@@ -44,10 +44,6 @@ do
 	then
 		attendance=$((RANDOM%3))
 		dailywagefind
-
-#array to store Daily Wage
-
-		Arr_Wage[$i]=$DailyWage
 		MonthlyWage=$((DailyWage + MonthlyWage))
 	fi
 done
